@@ -1,70 +1,37 @@
-# React + TypeScript + Vite
+# g-website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal presentation website — an online CV. A single-page portfolio for
+Gabriele Broccoli (software engineer, Imola, Italy) covering an about,
+experience timeline, education, skills, selected work and contact details.
 
-Currently, two official plugins are available:
+It's self-hosted: the site is containerised and served from my Kubernetes
+homelab through a Cloudflare Tunnel.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Design
 
-## Expanding the ESLint configuration
+A misty-alpine, topographic look — calm nature colours with a sage/eucalyptus
+accent, drifting contour lines in the background, and a dark/light theme.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech stack
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **React 19** + **TypeScript**, built with **Vite**
+- **Tailwind CSS v4** for styling, with a few **shadcn/ui** primitives
+- **nginx** serving the static build inside a multi-stage **Docker** image
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+All page content (profile, experience, education, skills, projects, socials)
+lives in [`src/content.ts`](src/content.ts) — the components only render it.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Development
+
+```bash
+npm install      # install dependencies
+npm run dev      # start the Vite dev server
+npm run build    # type-check and build to dist/
+npm run lint     # run ESLint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Deployment
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# home.gabro
+The site builds and runs as a Docker container — `npm ci && npm run build`
+inside `node`, then the `dist/` output is served by `nginx`. See the
+[`Dockerfile`](Dockerfile) and [`nginx.conf`](nginx.conf).
