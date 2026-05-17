@@ -15,7 +15,7 @@ export function Footer() {
       <div className="mx-auto w-full max-w-5xl px-6 md:px-10">
         <div className="flex flex-col gap-6 py-9 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <span className="grid size-8 place-items-center rounded-sm border border-border font-mono text-xs font-semibold tracking-tight">
+            <span className="grid size-8 place-items-center rounded-lg border border-border font-mono text-xs font-semibold tracking-tight">
               GB
             </span>
             <p className="font-mono text-xs text-muted-foreground">
@@ -33,7 +33,7 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={social.label}
-                  className="grid size-9 place-items-center rounded-sm border border-transparent text-muted-foreground transition-colors hover:border-border hover:text-accent-green"
+                  className="grid size-9 place-items-center rounded-lg border border-transparent text-muted-foreground transition-colors hover:border-border hover:text-accent-green"
                 >
                   <Icon className="size-4" />
                 </a>

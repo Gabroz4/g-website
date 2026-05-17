@@ -1,24 +1,15 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { profile, experience } from "@/content"
-import { cn } from "@/lib/utils"
-
-const CORNERS = [
-  "left-0 top-0 border-l border-t",
-  "right-0 top-0 border-r border-t",
-  "left-0 bottom-0 border-l border-b",
-  "right-0 bottom-0 border-r border-b",
-]
 
 export function Hero() {
-  const year = new Date().getFullYear()
   const current = experience[0]
 
   const specs = [
-    { k: "Role", v: profile.role },
-    { k: "Focus", v: profile.focus },
-    { k: "Based", v: profile.location },
-    { k: "Current", v: current ? current.org : "—" },
+    { k: "role", v: profile.role },
+    { k: "focus", v: profile.focus },
+    { k: "based", v: profile.location },
+    { k: "current", v: current ? current.org : "—" },
   ]
 
   return (
@@ -28,7 +19,11 @@ export function Hero() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-[15%] right-[5%] h-[40vh] w-[40vw] rounded-full bg-accent-green/[0.07] blur-[120px]"
+        className="pointer-events-none absolute -top-[12%] right-[2%] h-[42vh] w-[42vw] rounded-full bg-accent-green/[0.1] blur-[120px]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-[6%] -left-[8%] h-[34vh] w-[36vw] rounded-full bg-accent-sky/[0.09] blur-[130px]"
       />
 
       <div className="relative mx-auto flex w-full max-w-5xl flex-1 flex-col px-6 md:px-10">
@@ -42,7 +37,7 @@ export function Hero() {
             </div>
 
             <h1
-              className="rise mt-6 font-display text-[clamp(2.6rem,6vw,4.75rem)] font-medium leading-[0.98] tracking-[-0.035em]"
+              className="rise mt-6 font-display text-[clamp(2.6rem,6vw,4.85rem)] font-medium leading-[1.0] tracking-[-0.03em]"
               style={{ animationDelay: "0.1s" }}
             >
               {profile.name}
@@ -59,7 +54,7 @@ export function Hero() {
               className="rise mt-9 flex flex-wrap items-center gap-5"
               style={{ animationDelay: "0.34s" }}
             >
-              <Button asChild size="lg" className="rounded-md px-6">
+              <Button asChild size="lg" className="rounded-full px-7">
                 <a href="#projects">
                   View work
                   <ArrowUpRight className="size-4" />
@@ -67,7 +62,7 @@ export function Hero() {
               </Button>
               <a
                 href="#contact"
-                className="group inline-flex items-center font-mono text-sm uppercase tracking-wider"
+                className="group inline-flex items-center text-sm font-medium"
               >
                 <span className="border-b border-border pb-1 transition-colors group-hover:border-accent-green">
                   Get in touch
@@ -77,40 +72,26 @@ export function Hero() {
           </div>
 
           <div
-            className="rise relative border border-border bg-card/40 p-6 backdrop-blur-sm sm:p-7"
+            className="rise relative rounded-2xl border border-border bg-card/55 p-6 backdrop-blur-md sm:p-7"
             style={{ animationDelay: "0.44s" }}
           >
-            {CORNERS.map((c) => (
-              <span
-                key={c}
-                aria-hidden="true"
-                className={cn(
-                  "pointer-events-none absolute size-2.5 border-accent-green",
-                  c,
-                )}
-              />
-            ))}
-
             <div className="flex items-center justify-between">
-              <span className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">
-                Profile
+              <span className="font-mono text-xs tracking-wide text-muted-foreground">
+                // at a glance
               </span>
-              <span className="flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.22em] text-accent-green">
-                <span className="relative grid size-1.5 place-items-center">
-                  <span className="ping-soft absolute size-1.5 rounded-full bg-accent-green" />
-                  <span className="size-1.5 rounded-full bg-accent-green" />
-                </span>
-                Active
+              <span className="relative grid size-2 place-items-center">
+                <span className="ping-soft absolute size-2 rounded-full bg-accent-green" />
+                <span className="size-2 rounded-full bg-accent-green" />
               </span>
             </div>
 
-            <dl className="mt-5">
+            <dl className="mt-5 divide-y divide-border/60">
               {specs.map((s) => (
                 <div
                   key={s.k}
-                  className="flex items-baseline justify-between gap-4 border-t border-border/70 py-3 first:border-t-0 first:pt-0"
+                  className="flex items-baseline justify-between gap-4 py-3 first:pt-0"
                 >
-                  <dt className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-muted-foreground">
+                  <dt className="font-mono text-xs lowercase tracking-wide text-muted-foreground">
                     {s.k}
                   </dt>
                   <dd className="text-right text-sm font-medium">{s.v}</dd>
@@ -121,13 +102,16 @@ export function Hero() {
         </div>
 
         <div
-          className="rise flex items-center justify-between border-t border-border py-5 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground"
+          className="rise flex items-center justify-between gap-4 border-t border-border py-5 font-mono text-xs text-muted-foreground"
           style={{ animationDelay: "0.56s" }}
         >
-          <span>Curriculum Vitæ — {year}</span>
+          <span className="tracking-wide">
+            {profile.location}{" "}
+            <span className="text-accent-green/70">· 44.36°N 11.71°E</span>
+          </span>
           <a
             href="#about"
-            className="flex items-center gap-2 transition-colors hover:text-foreground"
+            className="flex items-center gap-2 uppercase tracking-[0.18em] transition-colors hover:text-foreground"
           >
             Scroll
             <ArrowDown className="float-down size-3.5" />

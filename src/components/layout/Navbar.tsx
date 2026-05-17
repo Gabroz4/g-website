@@ -18,7 +18,7 @@ function Monogram({ className }: { className?: string }) {
       href="#top"
       aria-label="Back to top"
       className={cn(
-        "grid size-9 place-items-center rounded-sm border border-border font-mono text-sm font-semibold tracking-tight transition-colors hover:border-accent-green hover:text-accent-green",
+        "grid size-9 place-items-center rounded-xl border border-border font-mono text-sm font-semibold tracking-tight transition-colors hover:border-accent-green hover:text-accent-green",
         className,
       )}
     >
@@ -117,7 +117,7 @@ export function Navbar() {
             type="button"
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
-            className="grid size-9 place-items-center rounded-sm border border-border text-muted-foreground transition-colors hover:border-accent-green hover:text-foreground lg:hidden"
+            className="grid size-9 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-accent-green hover:text-foreground lg:hidden"
           >
             <Menu className="size-4" />
           </button>
@@ -133,7 +133,7 @@ export function Navbar() {
               type="button"
               onClick={() => setMenuOpen(false)}
               aria-label="Close menu"
-              className="grid size-9 place-items-center rounded-sm border border-border text-muted-foreground transition-colors hover:border-accent-green hover:text-foreground"
+              className="grid size-9 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-accent-green hover:text-foreground"
             >
               <X className="size-4" />
             </button>

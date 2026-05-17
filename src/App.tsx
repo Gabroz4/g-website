@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
+import { TopoBackground } from "@/components/TopoBackground"
 import { Hero } from "@/components/sections/Hero"
 import { About } from "@/components/sections/About"
 import { Experience } from "@/components/sections/Experience"
@@ -12,17 +13,20 @@ function App() {
   return (
     <div className="relative min-h-svh">
       <div className="grain" aria-hidden="true" />
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Education />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
+      <TopoBackground />
+      <div className="relative z-10">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Experience />
+          <Education />
+          <Skills />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </div>
   )
 }
