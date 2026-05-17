@@ -1,22 +1,29 @@
-//import { useState } from 'react'
-
-import './App.css'
-
-import { Button } from "@/components/ui/button" //si possono importare un sacco di altre cose con npx shadcn@latest add <component>
-
+import { Navbar } from "@/components/layout/Navbar"
+import { Footer } from "@/components/layout/Footer"
+import { Hero } from "@/components/sections/Hero"
+import { About } from "@/components/sections/About"
+import { Experience } from "@/components/sections/Experience"
+import { Education } from "@/components/sections/Education"
+import { Skills } from "@/components/sections/Skills"
+import { Projects } from "@/components/sections/Projects"
+import { Contact } from "@/components/sections/Contact"
 
 function App() {
-  //const [count, setCount] = useState(0)
-
   return (
-    <>
-      
-      <h1>Work in progress</h1>
-
-      <div className="flex min-h-svh flex-col items-center justify-center">
-      <Button>This button does nothing</Button>
-      </div>
-    </>
+    <div className="relative min-h-svh">
+      <div className="grain" aria-hidden="true" />
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Experience />
+        <Education />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   )
 }
 

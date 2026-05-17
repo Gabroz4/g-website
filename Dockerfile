@@ -27,5 +27,7 @@ COPY --from=build /app/dist /usr/share/nginx/html
 
 EXPOSE 80
 
-HEALTHCHECK CMD wget -qO- http://localhost/ > /dev/null || exit 1
+RUN apk add --no-cache curl
+
+HEALTHCHECK --start-period=10s --interval=10s --timeout=5s CMD curl -f http://localhost/ || exit 1
 
