@@ -1,5 +1,5 @@
 import { ArrowUp, Github, Linkedin, Mail } from "lucide-react"
-import { profile, socials } from "@/content"
+import { useContent, useUI } from "@/i18n"
 
 const ICONS = {
   github: Github,
@@ -8,10 +8,12 @@ const ICONS = {
 }
 
 export function Footer() {
+  const { profile, socials } = useContent()
+  const t = useUI()
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-border">
+    <footer className="border-t border-border print:hidden">
       <div className="mx-auto w-full max-w-5xl px-6 md:px-10">
         <div className="flex flex-col gap-6 py-9 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
@@ -43,7 +45,7 @@ export function Footer() {
               href="#top"
               className="group ml-2 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-foreground"
             >
-              Top
+              {t.footer.top}
               <ArrowUp className="size-3.5 transition-transform group-hover:-translate-y-0.5" />
             </a>
           </div>
@@ -55,7 +57,7 @@ export function Footer() {
               <span className="ping-soft absolute size-1.5 rounded-full bg-accent-green" />
               <span className="size-1.5 rounded-full bg-accent-green" />
             </span>
-            Self-hosted on a homelab
+            {t.footer.selfHosted}
           </span>
           <span>React · TypeScript · Tailwind</span>
         </div>

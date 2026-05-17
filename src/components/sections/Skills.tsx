@@ -1,14 +1,17 @@
 import { Section } from "@/components/layout/Section"
-import { skills } from "@/content"
+import { useContent, useUI } from "@/i18n"
 
 export function Skills() {
+  const { skills } = useContent()
+  const t = useUI()
+
   return (
-    <Section id="skills" index="04" label="Skills">
+    <Section id="skills" index="04" label={t.nav.skills}>
       <div className="space-y-7">
         {skills.map((group) => (
           <div
             key={group.category}
-            className="grid gap-3 sm:grid-cols-[8rem_1fr] sm:gap-6"
+            className="grid gap-3 break-inside-avoid sm:grid-cols-[8rem_1fr] sm:gap-6"
           >
             <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground sm:pt-2">
               {group.category}

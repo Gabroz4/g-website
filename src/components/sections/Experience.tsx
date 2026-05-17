@@ -1,12 +1,18 @@
 import { Section } from "@/components/layout/Section"
-import { experience } from "@/content"
+import { useContent, useUI } from "@/i18n"
 
 export function Experience() {
+  const { experience } = useContent()
+  const t = useUI()
+
   return (
-    <Section id="experience" index="02" label="Experience">
+    <Section id="experience" index="02" label={t.nav.experience}>
       <ol className="space-y-9 border-l border-border pl-7">
         {experience.map((item) => (
-          <li key={`${item.org}-${item.period}`} className="relative">
+          <li
+            key={`${item.org}-${item.period}`}
+            className="relative break-inside-avoid"
+          >
             <span className="absolute -left-[calc(1.75rem+0.3125rem)] top-2 size-2.5 rounded-full bg-accent-green ring-4 ring-background" />
             <p className="font-mono text-xs uppercase tracking-[0.15em] text-accent-green">
               {item.period}

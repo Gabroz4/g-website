@@ -23,7 +23,7 @@ export function TopoBackground() {
   return (
     <div
       aria-hidden="true"
-      className="drift pointer-events-none fixed inset-0 z-0 overflow-hidden"
+      className="drift pointer-events-none fixed inset-0 z-0 overflow-hidden print:hidden"
       style={{
         maskImage:
           "radial-gradient(125% 90% at 50% 32%, transparent 0%, transparent 28%, black 80%)",

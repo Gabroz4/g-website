@@ -1,6 +1,6 @@
 import { Github, Linkedin, Mail } from "lucide-react"
 import { Section } from "@/components/layout/Section"
-import { profile, socials } from "@/content"
+import { useContent, useUI } from "@/i18n"
 
 const ICONS = {
   github: Github,
@@ -9,20 +9,23 @@ const ICONS = {
 }
 
 export function Contact() {
+  const { profile, socials } = useContent()
+  const t = useUI()
+
   return (
-    <Section id="contact" index="06" label="Contact">
-      <p className="max-w-lg font-display text-2xl leading-snug md:text-3xl">
-        Have an idea, a role, or just want to say hello?
+    <Section id="contact" index="07" label={t.nav.contact}>
+      <p className="max-w-lg font-display text-2xl leading-snug md:text-3xl print:text-xl">
+        {t.contact.prompt}
       </p>
       <a
         href={`mailto:${profile.email}`}
-        className="group mt-6 inline-block font-display text-xl leading-tight text-accent-green sm:text-2xl md:text-3xl"
+        className="group mt-6 inline-block font-display text-xl leading-tight text-accent-green sm:text-2xl md:text-3xl print:text-lg"
       >
         <span className="break-all border-b border-accent-green/40 pb-1 transition-colors group-hover:border-accent-green">
           {profile.email}
         </span>
       </a>
-      <ul className="mt-10 flex flex-wrap gap-x-8 gap-y-3">
+      <ul className="mt-10 flex flex-wrap gap-x-8 gap-y-3 print:mt-6">
         {socials.map((social) => {
           const Icon = ICONS[social.icon]
           return (

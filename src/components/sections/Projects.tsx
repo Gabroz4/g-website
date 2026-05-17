@@ -1,11 +1,14 @@
 import { ArrowUpRight } from "lucide-react"
 import { Section } from "@/components/layout/Section"
-import { projects } from "@/content"
+import { useContent, useUI } from "@/i18n"
 import { cn } from "@/lib/utils"
 
 export function Projects() {
+  const { projects } = useContent()
+  const t = useUI()
+
   return (
-    <Section id="projects" index="05" label="Work">
+    <Section id="projects" index="06" label={t.nav.work}>
       <ul>
         {projects.map((project, i) => {
           const Wrapper = project.link ? "a" : "div"
@@ -13,7 +16,7 @@ export function Projects() {
           return (
             <li
               key={project.title}
-              className="border-b border-border first:border-t"
+              className="break-inside-avoid border-b border-border first:border-t"
             >
               <Wrapper
                 {...(project.link
