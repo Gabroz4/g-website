@@ -1,19 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <defs>
-    <linearGradient id="psy" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#e6e2f2" />
-      <stop offset="1" stop-color="#a98ee8" />
+    <linearGradient id="psy" x1="14" y1="82" x2="36" y2="18" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a98ee8" />
+      <stop offset="1" stop-color="#e6e2f2" />
     </linearGradient>
   </defs>
   <rect width="100" height="100" rx="22" fill="#141119" />
-  <text
-    x="50"
-    y="52"
-    text-anchor="middle"
-    dominant-baseline="central"
-    font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace"
-    font-weight="600"
-    font-size="40"
-    fill="#eceaf2"
-  ><tspan fill="url(#psy)">/</tspan>gb</text>
+  <line x1="16" y1="80" x2="34" y2="20" stroke="url(#psy)" stroke-width="9" stroke-linecap="round" />
+  <g fill="none" stroke="#eceaf2" stroke-width="9" stroke-linecap="round">
+    <circle cx="47" cy="48" r="11" />
+    <path d="M58 37 V66 Q58 76 47 76" />
+    <path d="M67 20 V59" />
+    <circle cx="78" cy="48" r="11" />
+  </g>
 </svg>
