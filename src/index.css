@@ -28,67 +28,63 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-accent-green: var(--accent-green);
-  --color-accent-sky: var(--accent-sky);
+  --color-accent-violet: var(--accent-violet);
+  --color-accent-ice: var(--accent-ice);
   --color-destructive: var(--destructive);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
 }
 
+/* Light — porcelain paper, violet ink. */
 :root {
   --radius: 0.85rem;
-  --background: oklch(0.975 0.006 160);
-  --foreground: oklch(0.3 0.022 205);
-  --card: oklch(0.992 0.004 160);
-  --card-foreground: oklch(0.3 0.022 205);
-  --popover: oklch(0.992 0.004 160);
-  --popover-foreground: oklch(0.3 0.022 205);
-  --primary: oklch(0.54 0.1 156);
-  --primary-foreground: oklch(0.985 0.008 160);
-  --secondary: oklch(0.93 0.01 160);
-  --secondary-foreground: oklch(0.32 0.02 205);
-  --muted: oklch(0.94 0.008 160);
-  --muted-foreground: oklch(0.47 0.018 198);
-  --accent: oklch(0.93 0.012 160);
-  --accent-foreground: oklch(0.3 0.022 205);
-  --accent-green: oklch(0.5 0.105 156);
-  --accent-sky: oklch(0.55 0.09 235);
+  --background: oklch(0.977 0.004 300);
+  --foreground: oklch(0.27 0.02 300);
+  --card: oklch(0.99 0.003 300);
+  --card-foreground: oklch(0.27 0.02 300);
+  --popover: oklch(0.99 0.003 300);
+  --popover-foreground: oklch(0.27 0.02 300);
+  --primary: oklch(0.49 0.15 297);
+  --primary-foreground: oklch(0.985 0.005 300);
+  --secondary: oklch(0.93 0.012 300);
+  --secondary-foreground: oklch(0.3 0.02 300);
+  --muted: oklch(0.94 0.01 300);
+  --muted-foreground: oklch(0.47 0.02 297);
+  --accent: oklch(0.93 0.014 300);
+  --accent-foreground: oklch(0.27 0.02 300);
+  --accent-violet: oklch(0.49 0.15 297);
+  --accent-ice: oklch(0.52 0.055 275);
   --destructive: oklch(0.58 0.2 27);
-  --border: oklch(0.88 0.012 158);
-  --input: oklch(0.88 0.012 158);
-  --ring: oklch(0.5 0.105 156);
-  --bg-top: oklch(0.985 0.009 220);
-  --bg-bottom: oklch(0.96 0.011 152);
-  --topo-line: oklch(0.45 0.09 156 / 0.11);
-  --topo-sky: oklch(0.5 0.085 235 / 0.09);
+  --border: oklch(0.89 0.012 300);
+  --input: oklch(0.89 0.012 300);
+  --ring: oklch(0.49 0.15 297);
+  --geo-opacity: 0.15;
 }
 
+/* Dark (default) — near-black night, white/violet line-work. */
 .dark {
-  --background: oklch(0.185 0.013 210);
-  --foreground: oklch(0.915 0.008 180);
-  --card: oklch(0.225 0.014 210);
-  --card-foreground: oklch(0.915 0.008 180);
-  --popover: oklch(0.225 0.014 210);
-  --popover-foreground: oklch(0.915 0.008 180);
-  --primary: oklch(0.82 0.105 156);
-  --primary-foreground: oklch(0.18 0.03 156);
-  --secondary: oklch(0.265 0.014 210);
-  --secondary-foreground: oklch(0.915 0.008 180);
-  --muted: oklch(0.265 0.014 210);
-  --muted-foreground: oklch(0.67 0.014 195);
-  --accent: oklch(0.275 0.016 210);
-  --accent-foreground: oklch(0.915 0.008 180);
-  --accent-green: oklch(0.83 0.11 156);
-  --accent-sky: oklch(0.79 0.066 232);
+  --background: oklch(0.145 0.012 300);
+  --foreground: oklch(0.93 0.006 300);
+  --card: oklch(0.185 0.015 300);
+  --card-foreground: oklch(0.93 0.006 300);
+  --popover: oklch(0.185 0.015 300);
+  --popover-foreground: oklch(0.93 0.006 300);
+  --primary: oklch(0.76 0.13 297);
+  --primary-foreground: oklch(0.17 0.045 297);
+  --secondary: oklch(0.225 0.016 300);
+  --secondary-foreground: oklch(0.93 0.006 300);
+  --muted: oklch(0.225 0.016 300);
+  --muted-foreground: oklch(0.67 0.02 297);
+  --accent: oklch(0.235 0.017 300);
+  --accent-foreground: oklch(0.93 0.006 300);
+  --accent-violet: oklch(0.76 0.13 297);
+  --accent-ice: oklch(0.9 0.02 290);
   --destructive: oklch(0.62 0.18 25);
-  --border: oklch(0.315 0.016 210);
-  --input: oklch(0.34 0.016 210);
-  --ring: oklch(0.83 0.11 156);
-  --bg-top: oklch(0.215 0.018 218);
-  --bg-bottom: oklch(0.16 0.011 206);
-  --topo-line: oklch(0.83 0.11 156 / 0.07);
-  --topo-sky: oklch(0.79 0.07 232 / 0.06);
+  --border: oklch(0.27 0.016 300);
+  --input: oklch(0.3 0.016 300);
+  --ring: oklch(0.76 0.13 297);
+  --geo-opacity: 0.17;
 }
 
 @layer base {
@@ -102,17 +98,11 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
-    background-image: linear-gradient(
-      180deg,
-      var(--bg-top),
-      var(--bg-bottom)
-    );
-    background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   ::selection {
-    background: var(--accent-green);
+    background: var(--accent-violet);
     color: var(--background);
   }
   ::-webkit-scrollbar {
@@ -208,6 +198,38 @@
   animation: drift 11s ease-in-out infinite;
 }
 
+/* --- psy gradient system: ice white → violet --- */
+.psy-fill {
+  background-image: linear-gradient(
+    90deg,
+    var(--accent-ice),
+    var(--accent-violet)
+  );
+}
+
+.psy-text {
+  background-image: linear-gradient(
+    100deg,
+    var(--accent-ice) 5%,
+    var(--accent-violet) 90%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* project titles sweep into the gradient on hover */
+.group:hover .psy-hover-text {
+  background-image: linear-gradient(
+    100deg,
+    var(--accent-ice) 5%,
+    var(--accent-violet) 90%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 .grain {
   position: fixed;
   inset: 0;
@@ -223,24 +245,32 @@
   :root,
   .dark {
     --background: #ffffff;
-    --foreground: #1f2a2e;
+    --foreground: #232030;
     --card: #ffffff;
-    --card-foreground: #1f2a2e;
+    --card-foreground: #232030;
     --popover: #ffffff;
-    --popover-foreground: #1f2a2e;
-    --primary: #34674b;
+    --popover-foreground: #232030;
+    --primary: #4c3d85;
     --primary-foreground: #ffffff;
-    --secondary: #eef1ef;
-    --secondary-foreground: #1f2a2e;
-    --muted: #f2f4f3;
-    --muted-foreground: #4d5956;
-    --accent: #eef1ef;
-    --accent-foreground: #1f2a2e;
-    --accent-green: #34674b;
-    --accent-sky: #355b76;
-    --border: #c7d1cc;
-    --input: #c7d1cc;
-    --ring: #34674b;
+    --secondary: #f0eff4;
+    --secondary-foreground: #232030;
+    --muted: #f2f1f6;
+    --muted-foreground: #4f4c5c;
+    --accent: #f0eff4;
+    --accent-foreground: #232030;
+    --accent-violet: #4c3d85;
+    --accent-ice: #54506b;
+    --border: #cdcbd8;
+    --input: #cdcbd8;
+    --ring: #4c3d85;
+  }
+
+  /* gradient text prints as flat accent ink */
+  .psy-text {
+    background-image: none !important;
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+    color: var(--accent-violet) !important;
   }
 
   @page {

@@ -38,7 +38,7 @@ export function DownloadCV({
         aria-label={t.downloadCv}
         title={t.downloadCv}
         className={cn(
-          "grid size-9 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-accent-green hover:text-foreground",
+          "grid size-9 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-accent-violet hover:text-foreground",
           className,
         )}
       >
@@ -52,7 +52,7 @@ export function DownloadCV({
       type="button"
       onClick={handle}
       className={cn(
-        "inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 font-mono text-xs uppercase tracking-[0.12em] text-foreground transition-colors hover:border-accent-green hover:text-accent-green",
+        "inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 font-mono text-xs uppercase tracking-[0.12em] text-foreground transition-colors hover:border-accent-violet hover:text-accent-violet",
         className,
       )}
     >

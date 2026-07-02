@@ -10,8 +10,8 @@ export function Education() {
       <ol className="space-y-9 border-l border-border pl-7">
         {education.map((item) => (
           <li key={item.degree} className="relative break-inside-avoid">
-            <span className="absolute -left-[calc(1.75rem+0.3125rem)] top-2 size-2.5 rounded-full bg-accent-green ring-4 ring-background" />
-            <p className="font-mono text-xs uppercase tracking-[0.15em] text-accent-green">
+            <span className="absolute -left-[calc(1.75rem+0.25rem)] top-2 size-2 rotate-45 bg-accent-violet ring-4 ring-background" />
+            <p className="font-mono text-xs uppercase tracking-[0.15em] text-accent-violet">
               {item.period}
             </p>
             <h3 className="mt-2 font-display text-xl md:text-2xl">

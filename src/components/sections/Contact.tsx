@@ -19,10 +19,11 @@ export function Contact() {
       </p>
       <a
         href={`mailto:${profile.email}`}
-        className="group mt-6 inline-block font-display text-xl leading-tight text-accent-green sm:text-2xl md:text-3xl print:text-lg"
+        className="group mt-6 inline-block font-display text-xl leading-tight sm:text-2xl md:text-3xl print:text-lg"
       >
-        <span className="break-all border-b border-accent-green/40 pb-1 transition-colors group-hover:border-accent-green">
-          {profile.email}
+        <span className="psy-text border-b border-accent-violet/40 pb-1 transition-colors group-hover:border-accent-violet">
+          {profile.email.split("@")[0]}
+          <wbr />@{profile.email.split("@")[1]}
         </span>
       </a>
       <ul className="mt-10 flex flex-wrap gap-x-8 gap-y-3 print:mt-6">
@@ -36,7 +37,7 @@ export function Contact() {
                 rel="noreferrer"
                 className="group flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-foreground"
               >
-                <Icon className="size-4 transition-colors group-hover:text-accent-green" />
+                <Icon className="size-4 transition-colors group-hover:text-accent-violet" />
                 {social.label}
               </a>
             </li>

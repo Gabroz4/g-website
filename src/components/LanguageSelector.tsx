@@ -29,7 +29,7 @@ export function LanguageSelector({ className }: { className?: string }) {
             className={cn(
               "rounded-lg px-2 py-1 font-mono text-xs transition-colors",
               active
-                ? "bg-accent-green/15 text-accent-green"
+                ? "bg-accent-violet/15 text-accent-violet"
                 : "text-muted-foreground hover:text-foreground",
             )}
           >

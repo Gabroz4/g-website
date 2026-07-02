@@ -27,16 +27,16 @@ export function Projects() {
                   project.link && "md:hover:pl-4",
                 )}
               >
-                <span className="font-mono text-xs text-accent-green md:pt-2.5">
+                <span className="font-mono text-xs text-accent-violet md:pt-2.5">
                   {num}
                 </span>
                 <div className="flex-1">
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-display text-2xl leading-tight transition-colors group-hover:text-accent-green md:text-3xl">
+                    <h3 className="psy-hover-text font-display text-2xl leading-tight md:text-3xl">
                       {project.title}
                     </h3>
                     {project.link && (
-                      <ArrowUpRight className="mt-1 size-5 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent-green" />
+                      <ArrowUpRight className="mt-1 size-5 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent-violet" />
                     )}
                   </div>
                   <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">

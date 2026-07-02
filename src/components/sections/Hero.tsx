@@ -21,19 +21,27 @@ export function Hero() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-[12%] right-[2%] h-[42vh] w-[42vw] rounded-full bg-accent-green/[0.1] blur-[120px] print:hidden"
+        className="pointer-events-none absolute -top-[12%] right-[2%] h-[42vh] w-[42vw] rounded-full opacity-[0.13] blur-[120px] print:hidden"
+        style={{
+          background:
+            "conic-gradient(from 40deg, transparent, var(--accent-violet), var(--accent-ice), var(--accent-violet), transparent)",
+        }}
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-[6%] -left-[8%] h-[34vh] w-[36vw] rounded-full bg-accent-sky/[0.09] blur-[130px] print:hidden"
+        className="pointer-events-none absolute bottom-[6%] -left-[8%] h-[34vh] w-[36vw] rounded-full opacity-[0.11] blur-[130px] print:hidden"
+        style={{
+          background:
+            "conic-gradient(from 220deg, transparent, var(--accent-violet), var(--accent-ice), var(--accent-violet), transparent)",
+        }}
       />
 
       <div className="relative mx-auto flex w-full max-w-5xl flex-1 flex-col px-6 md:px-10">
         <div className="grid flex-1 items-center gap-12 pb-12 pt-32 lg:grid-cols-[1.45fr_1fr] lg:gap-16 print:gap-8 print:pb-4 print:pt-10">
           <div>
             <div className="rise flex items-center gap-3">
-              <span className="h-px w-10 bg-accent-green" />
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-accent-green">
+              <span className="psy-fill h-px w-10" />
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-accent-violet">
                 {profile.role}
               </span>
             </div>
@@ -66,7 +74,7 @@ export function Hero() {
                 href="#contact"
                 className="group inline-flex items-center text-sm font-medium"
               >
-                <span className="border-b border-border pb-1 transition-colors group-hover:border-accent-green">
+                <span className="border-b border-border pb-1 transition-colors group-hover:border-accent-violet">
                   {t.hero.getInTouch}
                 </span>
               </a>
@@ -74,16 +82,20 @@ export function Hero() {
           </div>
 
           <div
-            className="rise relative rounded-2xl border border-border bg-card/55 p-6 backdrop-blur-md sm:p-7"
+            className="rise relative overflow-hidden rounded-2xl border border-border bg-card/55 p-6 backdrop-blur-md sm:p-7"
             style={{ animationDelay: "0.44s" }}
           >
+            <span
+              aria-hidden="true"
+              className="psy-fill absolute inset-x-0 top-0 h-px opacity-70 print:hidden"
+            />
             <div className="flex items-center justify-between">
               <span className="font-mono text-xs tracking-wide text-muted-foreground">
                 // {t.hero.glance}
               </span>
               <span className="relative grid size-2 place-items-center">
-                <span className="ping-soft absolute size-2 rounded-full bg-accent-green print:hidden" />
-                <span className="size-2 rounded-full bg-accent-green" />
+                <span className="ping-soft absolute size-2 rounded-full bg-accent-violet print:hidden" />
+                <span className="size-2 rounded-full bg-accent-violet" />
               </span>
             </div>
 
@@ -109,7 +121,9 @@ export function Hero() {
         >
           <span className="tracking-wide">
             {profile.location}{" "}
-            <span className="text-accent-green/70">· 44.36°N 11.71°E</span>
+            <span className="text-accent-violet/70 max-sm:hidden">
+              · 44.36°N 11.71°E
+            </span>
           </span>
           <a
             href="#about"

@@ -22,11 +22,13 @@ function Monogram({ className }: { className?: string }) {
       href="#top"
       aria-label="Back to top"
       className={cn(
-        "grid size-9 place-items-center rounded-xl border border-border font-mono text-sm font-semibold tracking-tight transition-colors hover:border-accent-green hover:text-accent-green",
+        "grid size-9 place-items-center rounded-xl border border-border font-mono text-sm font-semibold tracking-tight transition-colors hover:border-accent-violet hover:text-accent-violet",
         className,
       )}
     >
-      GB
+      <span>
+        <span className="text-accent-violet">/</span>gb
+      </span>
     </a>
   )
 }
@@ -87,7 +89,7 @@ export function Navbar() {
     >
       <div className="absolute inset-x-0 top-0 h-px">
         <div
-          className="h-full bg-accent-green"
+          className="psy-fill h-full"
           style={{ width: `${progress * 100}%` }}
         />
       </div>
@@ -105,7 +107,7 @@ export function Navbar() {
                   className={cn(
                     "font-mono text-xs uppercase tracking-[0.14em] transition-colors",
                     isActive
-                      ? "text-accent-green"
+                      ? "text-accent-violet"
                       : "text-muted-foreground hover:text-foreground",
                   )}
                 >
@@ -124,7 +126,7 @@ export function Navbar() {
             type="button"
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
-            className="grid size-9 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-accent-green hover:text-foreground lg:hidden"
+            className="grid size-9 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-accent-violet hover:text-foreground lg:hidden"
           >
             <Menu className="size-4" />
           </button>
@@ -140,31 +142,33 @@ export function Navbar() {
               type="button"
               onClick={() => setMenuOpen(false)}
               aria-label="Close menu"
-              className="grid size-9 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-accent-green hover:text-foreground"
+              className="grid size-9 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-accent-violet hover:text-foreground"
             >
               <X className="size-4" />
             </button>
           </div>
 
-          <nav className="flex flex-1 flex-col justify-center px-6">
-            {SECTIONS.map((s, i) => (
-              <a
-                key={s.id}
-                href={`#${s.id}`}
-                onClick={() => setMenuOpen(false)}
-                className="group flex items-baseline gap-5 border-b border-border py-5 first:border-t"
-              >
-                <span className="font-mono text-xs text-accent-green">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="font-display text-3xl transition-colors group-hover:text-accent-green">
-                  {t.nav[s.key]}
-                </span>
-              </a>
-            ))}
+          <nav className="flex flex-1 flex-col overflow-y-auto px-6">
+            <div className="my-auto py-4">
+              {SECTIONS.map((s, i) => (
+                <a
+                  key={s.id}
+                  href={`#${s.id}`}
+                  onClick={() => setMenuOpen(false)}
+                  className="group flex items-baseline gap-5 border-b border-border py-4 first:border-t sm:py-5"
+                >
+                  <span className="font-mono text-xs text-accent-violet">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="font-display text-3xl transition-colors group-hover:text-accent-violet">
+                    {t.nav[s.key]}
+                  </span>
+                </a>
+              ))}
+            </div>
           </nav>
 
-          <div className="flex items-center justify-between gap-4 px-6 py-8">
+          <div className="flex shrink-0 items-center justify-between gap-4 px-6 py-6 sm:py-8">
             <span className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground">
               Gabriele Broccoli — {t.cv}
             </span>
